@@ -39,7 +39,7 @@ routing
 
 
 
-pli ze statyczną konfiguracją
+plik ze statyczną konfiguracją
 wchodzimy source /etc/network/interfaces.d/*
 allow-hotplug enp0s3
 auto enp0s3
