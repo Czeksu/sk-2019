@@ -39,10 +39,7 @@ routing
 
 
 
-plik ze statyczną konfiguracją
-wchodzimy source /etc/network/interfaces.d/*
-allow-hotplug enp0s3
-auto enp0s3
+
 interface enp0s3 inet static
           adress 192.168.100.1
           netmask 255.255.255.0
