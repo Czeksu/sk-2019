@@ -54,3 +54,11 @@ PC2
 
 **5. Dodanie wpisu do tablicy routingyuna PC0:**  
 ``iptables -t nat -A POSTROUTING -o`` + interfejs z dostępem do internetu + ``-j MASQUERADE``
+
+
+### Pingowanie google.com z pc1
+ ![pc1](pc1.png)
+
+
+### Pingowanie google.com z pc2
+ ![pc2](pc2.png)
