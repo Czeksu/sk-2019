@@ -52,7 +52,7 @@ PC2
 **4. Ustawienie DNS w pliku:**  
 ``pico /etc/resolv.conf``  
 
-**5. Dodanie wpisu do tablicy routingyuna PC0:**  
+**5. Dodanie wpisu do tablicy routingu na PC0:**  
 ``iptables -t nat -A POSTROUTING -o`` + interfejs z dostępem do internetu + ``-j MASQUERADE``
 
 
