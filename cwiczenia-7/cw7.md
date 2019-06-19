@@ -12,12 +12,15 @@ Zadanie
     * Rozszerz architekturę o automatyczną konfigurację hostów w podsieciach ``192.168.64.192/27`` oraz ``172.16.95.216/29`` z wyykorzystaniem usługi ``DHCP``
     * Rozpocznij od zapoznania się z dokumentacją oraz instalacji programu ``isc-dhcp-server`` dla ``PC1``
 
+ ## Rozwiązanie:
+ 
  
  ## Tworzymy 2 sieci NAT
 192.168.64.192/27<br>
 172.16.95.216/29<br>
-## PC1
 
+
+## PC1
 enp0s8 - 192.168.64.193/27<br>
 enp0s3 - NAT<br>
 enp0s9 - 172.16.95.217/29<br>
@@ -28,16 +31,16 @@ enp0s3 - 192.168.64.194/27<br>
 ## PC3
 enp0s3 - 172.16.95.218/29<br>
 
-## na PC1 ustawiamy forwarding:
+## PC1 - ustawiamy forwarding:
 echo 1 > /proc/sys/net/ipv4/ip_forward<br>
 
-## na PC1 udostępniamy internet:
+## PC1 - udostępniamy internet:
 iptables -t nat -A POSTROUTING -o enp0s3 -j MASQUERADE<br>
 
-## na PC2 ustawiamy routing:
+## PC2 - ustawiamy routing:
 
 ip route add default via 192.168.64.193 dev enp0s3<br>
 
-## na PC3 ustawiamy routing:
+## PC3 - ustawiamy routing:
 
 ip route add default via 172.16.95.217 dev enp0s3<br>
